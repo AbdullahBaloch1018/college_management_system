@@ -1,6 +1,6 @@
 # fyp
 
-A new Flutter project.
+A new Flutter project. In Our CMS project we are creating this for the Stakeholder Rise Group of Colleges, as also it is our final year project. 
 
 ## Getting Started
 
