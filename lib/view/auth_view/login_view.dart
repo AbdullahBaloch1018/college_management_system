@@ -1,6 +1,6 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:rise_college/resources/components/custom_app_bar.dart';
 import '../../resources/components/round_button.dart';
 import '../../utils/routes/routes_name.dart';
 import '../../utils/utils.dart';
@@ -35,11 +35,9 @@ class _LoginViewState extends State<LoginView> {
 
   @override
   Widget build(BuildContext context) {
-    if (kDebugMode) {
-      print("Login Whole Screen Rebuilding");
-    }
 
     return Scaffold(
+      appBar: CustomAppBar(titleWidget: Text('Login')),
       body: SafeArea(
         child: Stack(
           children: [
@@ -47,7 +45,7 @@ class _LoginViewState extends State<LoginView> {
             Opacity(
               opacity: 0.15,
               child: Center(
-                  child: Image.asset('assets/logo.png', width: 600),
+                  child: Image.asset('assets/logo.png', width: 600,),
               ),
             ),
             // Main login form
@@ -60,7 +58,7 @@ class _LoginViewState extends State<LoginView> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       // Logo at the top
-                      Image.asset('assets/logo.png', width: 200),
+                      Image.asset('assets/logo2.png', width: 200,),
                       const SizedBox(height: 30),
                       // Email FormField
                       TextFormField(
@@ -95,14 +93,18 @@ class _LoginViewState extends State<LoginView> {
                         ),
                       ),
                       const SizedBox(height: 16),
+
                       // Password FormField
-                      /*ValueListenableBuilder(
+                      ValueListenableBuilder(
                         valueListenable: _obscurePassword,
                         builder: (context, value, child) {
                           return TextFormField(
                             controller: _passwordController,
                             focusNode: _passwordFocus,
                             obscureText: _obscurePassword.value,
+                            onFieldSubmitted: (value){
+                              _submitLogin();
+                            },
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return "Please enter your password";
@@ -133,40 +135,6 @@ class _LoginViewState extends State<LoginView> {
                             ),
                           );
                         },
-                      )*/
-                      TextFormField(
-                        controller: _passwordController,
-                        focusNode: _passwordFocus,
-
-                        obscureText: _obscurePassword.value,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return "Please enter your password";
-                          }
-                          return null;
-                        },
-                        autovalidateMode:
-                        AutovalidateMode.onUserInteraction,
-                        textInputAction: TextInputAction.done,
-                        decoration: InputDecoration(
-                          hintText: "Enter Password",
-                          labelText: "Password",
-                          prefixIcon: const Icon(Icons.lock),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          suffixIcon: InkWell(
-                            onTap: () {
-                              _obscurePassword.value =
-                              !_obscurePassword.value;
-                            },
-                            child: Icon(
-                              _obscurePassword.value
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
-                            ),
-                          ),
-                        ),
                       ),
                       const SizedBox(height: 24),
                       // Login button
@@ -174,11 +142,10 @@ class _LoginViewState extends State<LoginView> {
                         builder: (context, authProvider, child) {
                           return SizedBox(
                             width: MediaQuery.of(context).size.width * 0.4,
-
                             child: RoundButton(
-                              // loading: authProvider.loginLoading,
+                              loading: authProvider.loginLoading,
                               onPress: () async{
-                                  Navigator.pushNamedAndRemoveUntil(context, RoutesName.navMenu, (route) => false,);
+                                _submitLogin();
                               },
                               title: 'Login',
                             ),
@@ -205,6 +172,19 @@ class _LoginViewState extends State<LoginView> {
                           ),
                         ],
                       ),
+                      InkWell(
+                        onTap: (){
+                          Navigator.pushNamed(context, RoutesName.teacherDashboardView,);
+                        },
+                        child: Text("Teacher Panel"),
+                      ),
+                      SizedBox(height: 10,),
+                      InkWell(
+                        onTap: (){
+                          Navigator.pushNamed(context, RoutesName.adminMainView,);
+                        },
+                        child: Text("Admin Panel"),
+                      ),
                     ],
                   ),
                 ),
@@ -214,5 +194,11 @@ class _LoginViewState extends State<LoginView> {
         ),
       ),
     );
+  }
+  void _submitLogin()async{
+    if(_formKey.currentState!.validate()){
+      final authProvider = Provider.of<AuthViewModel>(context,listen: false);
+      await authProvider.loginWithFirebase(_emailController.text.trim(), _passwordController.text.trim(), context);
+    }
   }
 }

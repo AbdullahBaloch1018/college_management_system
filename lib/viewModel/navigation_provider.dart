@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 
 class NavigationProvider with ChangeNotifier {
   int _selectedIndex = 0;
@@ -7,6 +7,11 @@ class NavigationProvider with ChangeNotifier {
 
   void updateIndex(int index) {
     _selectedIndex = index;
-    notifyListeners(); // rebuild UI
+    notifyListeners();
+  }
+
+  void reset() {
+    _selectedIndex = 0;
+    notifyListeners();
   }
 }

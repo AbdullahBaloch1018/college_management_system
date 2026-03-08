@@ -52,12 +52,11 @@ class AttendanceService {
     }
   }
 }
-
 class AttendanceScreen extends StatefulWidget {
   const AttendanceScreen({super.key});
 
   @override
-  _AttendanceScreenState createState() => _AttendanceScreenState();
+  State<AttendanceScreen> createState() => _AttendanceScreenState();
 }
 
 class _AttendanceScreenState extends State<AttendanceScreen> {
@@ -89,9 +88,6 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (kDebugMode) {
-      print("Attendance Tracker Screen building");
-    }
     return Scaffold(
       appBar: AppBar(
         title: const Text('Attendance Tracker'),
@@ -162,17 +158,17 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                       ),
                       RichText(
                           text: const TextSpan(
-                        children: [
-                          TextSpan(
-                            text: '.',
-                            style: TextStyle(color: Colors.red, fontSize: 150),
-                          ),
-                          TextSpan(
-                            text: 'Absent',
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                        ],
-                      )),
+                            children: [
+                              TextSpan(
+                                text: '.',
+                                style: TextStyle(color: Colors.red, fontSize: 150),
+                              ),
+                              TextSpan(
+                                text: 'Absent',
+                                style: TextStyle(color: Colors.white, fontSize: 20),
+                              ),
+                            ],
+                          )),
                     ],
                   )
                 ],

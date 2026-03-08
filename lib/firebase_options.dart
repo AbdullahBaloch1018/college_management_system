@@ -42,17 +42,17 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyCAOEpFcVql9dtYIQkgvzqGVFm77VB7w14',
-    appId: '1:123240900148:web:e9e47e26f881e0b6b58c61',
+    appId: '1:123240900148:web:d81c0f411242f89fb58c61',
     messagingSenderId: '123240900148',
     projectId: 'final-year-project-cms',
     authDomain: 'final-year-project-cms.firebaseapp.com',
     storageBucket: 'final-year-project-cms.firebasestorage.app',
-    measurementId: 'G-05V3QZLK39',
+    measurementId: 'G-TPNLZ4ZSK7',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBHbZQX7AwmBDH69hKb4Jp6iX5XyY0OTcg',
-    appId: '1:123240900148:android:a5c802b1d8e05604b58c61',
+    appId: '1:123240900148:android:044ca6200720b0f5b58c61',
     messagingSenderId: '123240900148',
     projectId: 'final-year-project-cms',
     storageBucket: 'final-year-project-cms.firebasestorage.app',
@@ -60,29 +60,34 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyBnfSzeCk4L_EpyoL_vDlbEa5qlq1wBbVE',
-    appId: '1:123240900148:ios:0f856249842d2bd2b58c61',
+    appId: '1:123240900148:ios:213b0c78695bb399b58c61',
     messagingSenderId: '123240900148',
     projectId: 'final-year-project-cms',
     storageBucket: 'final-year-project-cms.firebasestorage.app',
+    androidClientId: '123240900148-073md62ehus5ln2d869acnjqflpgji9a.apps.googleusercontent.com',
+    iosClientId: '123240900148-bih3m0b6flaqd8kpd24dsae1lq081rba.apps.googleusercontent.com',
     iosBundleId: 'com.example.fyp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyBnfSzeCk4L_EpyoL_vDlbEa5qlq1wBbVE',
-    appId: '1:123240900148:ios:0f856249842d2bd2b58c61',
+    appId: '1:123240900148:ios:213b0c78695bb399b58c61',
     messagingSenderId: '123240900148',
     projectId: 'final-year-project-cms',
     storageBucket: 'final-year-project-cms.firebasestorage.app',
+    androidClientId: '123240900148-073md62ehus5ln2d869acnjqflpgji9a.apps.googleusercontent.com',
+    iosClientId: '123240900148-bih3m0b6flaqd8kpd24dsae1lq081rba.apps.googleusercontent.com',
     iosBundleId: 'com.example.fyp',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
     apiKey: 'AIzaSyCAOEpFcVql9dtYIQkgvzqGVFm77VB7w14',
-    appId: '1:123240900148:web:8f51c6c291464f1eb58c61',
+    appId: '1:123240900148:web:eb828bb89b215ef0b58c61',
     messagingSenderId: '123240900148',
     projectId: 'final-year-project-cms',
     authDomain: 'final-year-project-cms.firebaseapp.com',
     storageBucket: 'final-year-project-cms.firebasestorage.app',
-    measurementId: 'G-1WEY45QBTF',
+    measurementId: 'G-9KQR3VV2KG',
   );
+
 }

@@ -17,7 +17,7 @@ class _AttendanceViewState extends State<AttendanceView> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final viewModel = Provider.of<AttendanceViewModel>(
+      final viewModel = Provider.of<AttendanceViewModelOriginal>(
         context,
         listen: false,
       );
@@ -27,7 +27,7 @@ class _AttendanceViewState extends State<AttendanceView> {
 
   @override
   Widget build(BuildContext context) {
-    final viewModel = Provider.of<AttendanceViewModel>(context);
+    final viewModel = Provider.of<AttendanceViewModelOriginal>(context);
 
     return Scaffold(
       appBar: AppBar(title: const Text('Attendance Data')),

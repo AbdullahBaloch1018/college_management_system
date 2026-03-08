@@ -36,7 +36,7 @@ class _PerformancePredictorViewState extends State<PerformancePredictorView> {
         title: const Text('AI Performance Predictor'),
         centerTitle: true,
         elevation: 5,
-        shadowColor: Colors.deepPurple.withOpacity(0.4),
+        shadowColor: Colors.deepPurple.withValues(alpha: 0.4),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -83,7 +83,7 @@ class _PerformancePredictorViewState extends State<PerformancePredictorView> {
     return Center(
       child: Card(
         elevation: 6,
-        shadowColor: Colors.deepPurple.withOpacity(0.3),
+        shadowColor: Colors.deepPurple.withValues(alpha: 0.3),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         child: Padding(
           padding: const EdgeInsets.all(20.0),

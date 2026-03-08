@@ -15,8 +15,10 @@ class _NotificationViewState extends State<NotificationView> {
   @override
   void initState() {
     super.initState();
-    Provider.of<NotificationViewModel>(context, listen: false)
-        .fetchNotifications();
+    Future.microtask(() {
+
+      Provider.of<NotificationViewModel>(context, listen: false).fetchNotifications();
+    },);
   }
 
   @override
@@ -78,8 +80,8 @@ class _NotificationViewState extends State<NotificationView> {
                   borderRadius: BorderRadius.circular(16),
                   gradient: LinearGradient(
                     colors: [
-                      color.withOpacity(0.9),
-                      color.withOpacity(0.7),
+                      color.withValues(alpha: 0.9),
+                      color.withValues(alpha: 0.7),
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
@@ -112,7 +114,7 @@ class _NotificationViewState extends State<NotificationView> {
                             formattedDate,
                             style: TextStyle(
                               color:
-                              Colors.white.withOpacity(0.8),
+                              Colors.white.withValues(alpha: 0.8),
                               fontSize: 12,
                             ),
                           ),
@@ -131,7 +133,7 @@ class _NotificationViewState extends State<NotificationView> {
                       Text(
                         notification.description,
                         style: TextStyle(
-                          color: Colors.white.withOpacity(0.9),
+                          color: Colors.white.withValues(alpha: 0.9),
                           fontSize: 14,
                           height: 1.4,
                         ),

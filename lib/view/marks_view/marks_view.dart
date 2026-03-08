@@ -52,7 +52,7 @@ class SubjectContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: marksColor.withOpacity(0.15),
+            color: marksColor.withValues(alpha: 0.15),
             blurRadius: 15,
             offset: const Offset(0, 5),
             spreadRadius: 0,
@@ -76,14 +76,14 @@ class SubjectContainer extends StatelessWidget {
                   height: 56,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [marksColor, marksColor.withOpacity(0.7)],
+                      colors: [marksColor, marksColor.withValues(alpha: 0.7)],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
                     borderRadius: BorderRadius.circular(16),
                     boxShadow: [
                       BoxShadow(
-                        color: marksColor.withOpacity(0.3),
+                        color: marksColor.withValues(alpha: 0.3),
                         blurRadius: 8,
                         offset: const Offset(0, 4),
                       ),
@@ -132,12 +132,12 @@ class SubjectContainer extends StatelessWidget {
                   ),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [marksColor, marksColor.withOpacity(0.8)],
+                      colors: [marksColor, marksColor.withValues(alpha: 0.8)],
                     ),
                     borderRadius: BorderRadius.circular(12),
                     boxShadow: [
                       BoxShadow(
-                        color: marksColor.withOpacity(0.3),
+                        color: marksColor.withValues(alpha: 0.3),
                         blurRadius: 6,
                         offset: const Offset(0, 3),
                       ),
@@ -199,7 +199,7 @@ class _MarksViewState extends State<MarksView> {
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.1),
+                        color: Colors.grey.withValues(alpha: 0.1),
                         blurRadius: 20,
                         offset: const Offset(0, 10),
                       ),
@@ -252,7 +252,7 @@ class _MarksViewState extends State<MarksView> {
       flexibleSpace: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [AppColors.primary, AppColors.primary.withOpacity(0.8)],
+            colors: [AppColors.primary, AppColors.primary.withValues(alpha: 0.8)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -265,7 +265,7 @@ class _MarksViewState extends State<MarksView> {
           height: 1,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.white.withOpacity(0.3), Colors.transparent],
+              colors: [Colors.white.withValues(alpha: 0.3), Colors.transparent],
             ),
           ),
         ),
@@ -296,7 +296,7 @@ class _MarksViewState extends State<MarksView> {
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.1),
+                      color: Colors.grey.withValues(alpha: 0.1),
                       blurRadius: 20,
                       offset: const Offset(0, 10),
                     ),
@@ -351,7 +351,7 @@ class _MarksViewState extends State<MarksView> {
                 borderRadius: BorderRadius.circular(28),
                 boxShadow: [
                   BoxShadow(
-                    color: resultColor.withOpacity(0.15),
+                    color: resultColor.withValues(alpha: 0.15),
                     blurRadius: 30,
                     offset: const Offset(0, 15),
                     spreadRadius: 0,
@@ -386,7 +386,7 @@ class _MarksViewState extends State<MarksView> {
                                 vertical: 6,
                               ),
                               decoration: BoxDecoration(
-                                color: resultColor.withOpacity(0.15),
+                                color: resultColor.withValues(alpha: 0.15),
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: Text(
@@ -401,7 +401,7 @@ class _MarksViewState extends State<MarksView> {
                           ],
                         ),
                         progressColor: resultColor,
-                        backgroundColor: resultColor.withOpacity(0.1),
+                        backgroundColor: resultColor.withValues(alpha: 0.1),
                         circularStrokeCap: CircularStrokeCap.round,
                         animation: true,
                         animationDuration: 2000,
@@ -445,7 +445,7 @@ class _MarksViewState extends State<MarksView> {
                       gradient: LinearGradient(
                         colors: [
                           AppColors.primary,
-                          AppColors.primary.withOpacity(0.6),
+                          AppColors.primary.withValues(alpha: 0.6),
                         ],
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
@@ -489,14 +489,14 @@ class _MarksViewState extends State<MarksView> {
               padding: const EdgeInsets.all(24),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [resultColor, resultColor.withOpacity(0.8)],
+                  colors: [resultColor, resultColor.withValues(alpha: 0.8)],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
                 borderRadius: BorderRadius.circular(24),
                 boxShadow: [
                   BoxShadow(
-                    color: resultColor.withOpacity(0.4),
+                    color: resultColor.withValues(alpha: 0.4),
                     blurRadius: 20,
                     offset: const Offset(0, 10),
                     spreadRadius: 0,
@@ -515,7 +515,7 @@ class _MarksViewState extends State<MarksView> {
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w600,
-                            color: Colors.white.withOpacity(0.9),
+                            color: Colors.white.withValues(alpha: 0.9),
                             letterSpacing: 0.5,
                           ),
                         ),
@@ -534,7 +534,7 @@ class _MarksViewState extends State<MarksView> {
                           'Out of ${subjects.length * 100}',
                           style: TextStyle(
                             fontSize: 14,
-                            color: Colors.white.withOpacity(0.8),
+                            color: Colors.white.withValues(alpha: 0.8),
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -544,7 +544,7 @@ class _MarksViewState extends State<MarksView> {
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.2),
+                      color: Colors.white.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: const Icon(
@@ -572,12 +572,12 @@ class _MarksViewState extends State<MarksView> {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [color.withOpacity(0.15), color.withOpacity(0.08)],
+          colors: [color.withValues(alpha: 0.15), color.withValues(alpha: 0.08)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: color.withOpacity(0.2), width: 1),
+        border: Border.all(color: color.withValues(alpha: 0.2), width: 1),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -585,7 +585,7 @@ class _MarksViewState extends State<MarksView> {
           Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: color.withOpacity(0.2),
+              color: color.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Icon(icon, color: color, size: 26),

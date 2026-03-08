@@ -26,7 +26,7 @@ class SelectCard extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 28,
-            backgroundColor: choice.color.withOpacity(0.15),
+            backgroundColor: choice.color.withValues(alpha: 0.15),
             child: SvgPicture.asset(
               choice.svgAssetPath,
               height: choice.height,

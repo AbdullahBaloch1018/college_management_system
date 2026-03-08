@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   // Core brand colors
-  static const Color primary = Color(0xFF1565C0); // Blue
-  static const Color primaryDark = Color(0xFF0D47A1);
+  // static const Color primary = Color(0xFF1565C0); // Blue
+  // static const Color primaryDark = Color(0xFF0D47A1);
+  static const Color primary = Color(0xFF4A0E1F); // primary darkMaroon
+  static const Color primaryDark = Color(0xFF7A1C2D); // medium Maroon
   static const Color accent = Color(0xFFFFC107); // Amber
+
+  static const Color darkMaroon  = Color(0xFF4A0E1F); // darkMaroon
+  static const Color mediumMaroon =  Color(0xFF7A1C2D); // Medium maroon
+  static const Color lightMaroon = Color(0xFF9B2C3B); // Light maroon
 
   // Neutral colors
   static const Color white = Colors.white;
@@ -23,11 +29,4 @@ class AppColors {
   static const Color background = Color(0xFFF5F5F5); // Light grey
   static const Color card = Color(0xFFFFFFFF);
   static const Color shadow = Color(0x1F000000); // Black with opacity
-
-  // Gradients (example)
-  static const LinearGradient primaryGradient = LinearGradient(
-    colors: [Color(0xFF1565C0), Color(0xFF42A5F5)],
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-  );
 }

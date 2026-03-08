@@ -190,7 +190,7 @@ class _SubjectHomeworkListState extends State<SubjectHomeworkList> {
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
-                  color: subjectColor.withOpacity(0.1),
+                  color: subjectColor.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
@@ -232,7 +232,7 @@ class _SubjectHomeworkListState extends State<SubjectHomeworkList> {
                       gradient: LinearGradient(
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
-                        colors: [subjectColor, subjectColor.withOpacity(0.7)],
+                        colors: [subjectColor, subjectColor.withValues(alpha: 0.7)],
                       ),
                     ),
                     child: Padding(
@@ -265,7 +265,7 @@ class _SubjectHomeworkListState extends State<SubjectHomeworkList> {
                               Text(
                                 homework.description,
                                 style: TextStyle(
-                                  color: Colors.white.withOpacity(0.9),
+                                  color: Colors.white.withValues(alpha: 0.9),
                                   fontSize: 14,
                                   height: 1.4,
                                 ),
@@ -278,7 +278,7 @@ class _SubjectHomeworkListState extends State<SubjectHomeworkList> {
                           Container(
                             padding: const EdgeInsets.all(12),
                             decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.2),
+                              color: Colors.white.withValues(alpha: 0.2),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Row(

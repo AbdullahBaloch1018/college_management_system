@@ -1,9 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:rise_college/resources/components/custom_app_bar.dart';
+import 'package:rise_college/viewModel/navigation_provider.dart';
 
 import '../../Services/user_service.dart';
 import '../../model/user_model.dart';
+import '../../resources/components/round_button.dart';
+import '../../utils/routes/routes_name.dart';
 
-
+// Student Profile View
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
 
@@ -25,15 +31,7 @@ class _ProfileViewState extends State<ProfileView> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: const Text(
-          "Your Profile",
-          style: TextStyle(fontWeight: FontWeight.w600),
-        ),
-        centerTitle: true,
-      ),
+      appBar: CustomAppBar(titleWidget: Text("Profile")),
 
       body: SingleChildScrollView(
         child: Container(
@@ -74,7 +72,7 @@ class _ProfileViewState extends State<ProfileView> {
                         border: Border.all(color: Colors.white, width: 3),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.white.withOpacity(0.3),
+                            color: Colors.white.withValues(alpha: 0.3),
                             blurRadius: 20,
                           ),
                         ],
@@ -96,6 +94,15 @@ class _ProfileViewState extends State<ProfileView> {
                   InfoTile(label: "Roll Number", value: user.rollNumber, icon: Icons.confirmation_num),
                   InfoTile(label: "Faculty", value: user.faculty, icon: Icons.school),
                   InfoTile(label: "Phone", value: user.phoneNumber, icon: Icons.phone),
+                  SizedBox(height: 20,),
+                  RoundButton(
+                    title: "Logout",
+                    onPress: (){
+                      FirebaseAuth.instance.signOut();
+                      Provider.of<NavigationProvider>(context,listen:  false).reset();
+                      Navigator.pushNamedAndRemoveUntil(context, RoutesName.login, (route) => false,);
+                    },
+                  ),
                 ],
               );
             },
@@ -126,7 +133,7 @@ class InfoTile extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 8),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.black.withOpacity(0.15),
+        color: Colors.black.withValues(alpha: 0.15),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: Colors.white30),
         boxShadow: [

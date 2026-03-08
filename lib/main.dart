@@ -5,7 +5,24 @@ import 'package:provider/provider.dart';
 import 'package:rise_college/firebase_options.dart';
 import 'package:rise_college/utils/routes/routes.dart';
 import 'package:rise_college/utils/routes/routes_name.dart';
-import 'package:rise_college/viewModel/admin_panel_view_model.dart';
+import 'package:rise_college/viewModel/AdminViewModel/admin_main_view_model/admin_dashboard_view_model.dart';
+import 'package:rise_college/viewModel/AdminViewModel/admin_system_setting_view_model/admin_system_setting_view_model.dart';
+import 'package:rise_college/viewModel/AdminViewModel/class_management_view_model/class_management_view_model.dart';
+import 'package:rise_college/viewModel/AdminViewModel/class_management_view_model/create_class_by_admin_view_model.dart';
+import 'package:rise_college/viewModel/AdminViewModel/subject_management_by_admin_view_model/subject_management_view_model.dart';
+import 'package:rise_college/viewModel/AdminViewModel/admin_timetable_view_model/admin_timetable_view_model.dart';
+import 'package:rise_college/viewModel/AdminViewModel/user_management_view_model/create_user_by_admin_view_model.dart';
+import 'package:rise_college/viewModel/AdminViewModel/user_management_view_model/edit_user_by_admin_view_model.dart';
+import 'package:rise_college/viewModel/AdminViewModel/user_management_view_model/user_management_view_model.dart';
+import 'package:rise_college/viewModel/TeacherViewModel/announcement_by_teacher_view_model/announcement_view_model.dart';
+import 'package:rise_college/viewModel/TeacherViewModel/attendance_by_teacher_view_model/attendance_by_teacher_view_model.dart';
+import 'package:rise_college/viewModel/TeacherViewModel/plagiarism_by_teacher_view_model/plagiarism_view_model.dart';
+import 'package:rise_college/viewModel/TeacherViewModel/result_by_teacher_view_model/result_view_model.dart';
+import 'package:rise_college/viewModel/TeacherViewModel/teacher_class_view_model/teacher_class_view_model.dart';
+import 'package:rise_college/viewModel/TeacherViewModel/teacher_dashboard_view_model/teacher_dashboard_view_model.dart';
+import 'package:rise_college/viewModel/TeacherViewModel/ai_performance_view_model/ai_performance_view_model.dart';
+import 'package:rise_college/viewModel/TeacherViewModel/assignment_by_teacher_view_model/assignment_view_model.dart';
+import 'package:rise_college/viewModel/AdminViewModel/admin_main_view_model/admin_panel_view_model.dart';
 import 'package:rise_college/viewModel/attendance_view_model.dart';
 import 'package:rise_college/viewModel/auth_view_model.dart';
 import 'package:rise_college/viewModel/home_view_model.dart';
@@ -20,23 +37,10 @@ import 'package:rise_college/viewModel/predictor_view_model.dart';
 import 'package:rise_college/viewModel/seminar_view_model.dart';
 import 'package:rise_college/viewModel/chart_view_model.dart';
 import 'package:rise_college/viewModel/timetable_view_model.dart';
-import 'package:rise_college/viewModel/user_role_view_model.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
- /// old firebase configuration
-  /*await Firebase.initializeApp(
-      options: const FirebaseOptions(
-        apiKey: 'AIzaSyDVZBV6gXfOFtvuh21hxi9yVgShl_ZL2Qg',
-        appId: '1:854814242691:android:1003ed0a03987b99b5a8b6',
-        messagingSenderId: 'messagingSenderId',
-        projectId: 'collegemanagementappacem',
-      ),
-  );*/
-
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   runApp(const MyApp());
 }
@@ -49,7 +53,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => AuthViewModel()),
-        ChangeNotifierProvider(create: (_) => AttendanceViewModel()),
+        ChangeNotifierProvider(create: (_) => AttendanceViewModelOriginal()),
         ChangeNotifierProvider(create: (_) => HomeworkViewModel()),
         ChangeNotifierProvider(create: (_) => PredictorViewModel()),
         ChangeNotifierProvider(create: (_) => MarksViewModel()),
@@ -61,16 +65,38 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => TimetableViewModel()),
         ChangeNotifierProvider(create: (_) => HomeViewModel()),
         ChangeNotifierProvider(create: (_) => NotificationViewModel()),
-        // ChangeNotifierProvider(create: (_) => UserRoleViewModel()),
         ChangeNotifierProvider(create: (_) => NavigationProvider()),
         ChangeNotifierProvider(create: (_) => AdminProvider()),
 
+        /// Teacher Panel
+        ChangeNotifierProvider(create: (_) => TeacherDashboardViewModel()),
+        // ChangeNotifierProvider(create: (_) => AttendanceViewModel()),
+        // By Claude
+        ChangeNotifierProvider(create: (_) => AttendanceByTeacherViewModel()),
+        ChangeNotifierProvider(create: (_) => ResultViewModel()),
+        ChangeNotifierProvider(create: (_) => PlagiarismViewModel()),
+        ChangeNotifierProvider(create: (_) => AnnouncementViewModel()),
+        ChangeNotifierProvider(create: (_) => AIPerformanceViewModel()),
+        ChangeNotifierProvider(create: (_) => AssignmentViewModel()),
+        ChangeNotifierProvider(create: (_) => TeacherClassViewModel()),
 
+
+        /// Admin Panel
+        ChangeNotifierProvider(create: (_) => AdminDashboardViewModel()),
+        ChangeNotifierProvider(create: (_) => UserManagementViewModel()),
+        ChangeNotifierProvider(create: (_) => ClassManagementByAdminViewModel(),),
+        ChangeNotifierProvider(create: (_) => SubjectManagementViewModel(),),
+        ChangeNotifierProvider(create: (_) => AdminTimetableViewModel()..loadTimetable(),),
+        ChangeNotifierProvider(create: (_) => AdminSystemSettingViewModel()..listenToSettings(),),
+
+        ChangeNotifierProvider(create: (_) => CreateUserByAdminViewModel()),
+        ChangeNotifierProvider(create: (_) => EditUserByAdminViewModel()),
+
+        ChangeNotifierProvider(create: (_) => CreateClassByAdminViewModel()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'College  Management System',
-        // home: AdminDashboardWebView(),
         initialRoute: RoutesName.splash,
         onGenerateRoute: Routes.generateRoute,
         theme: ThemeData(

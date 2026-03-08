@@ -52,7 +52,7 @@ class _TimeTableViewState extends State<TimeTableView> {
           gradient: LinearGradient(
             colors: [
               AppColors.primary,
-              AppColors.primary.withOpacity(0.8),
+              AppColors.primary.withValues(alpha: 0.8),
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -67,7 +67,7 @@ class _TimeTableViewState extends State<TimeTableView> {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Colors.white.withOpacity(0.3),
+                Colors.white.withValues(alpha: 0.3),
                 Colors.transparent,
               ],
             ),
@@ -117,7 +117,7 @@ class _TimeTableViewState extends State<TimeTableView> {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.1),
+                    color: Colors.grey.withValues(alpha: 0.1),
                     blurRadius: 20,
                     offset: const Offset(0, 10),
                   ),
@@ -164,7 +164,7 @@ class _TimeTableViewState extends State<TimeTableView> {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.1),
+                    color: Colors.grey.withValues(alpha: 0.1),
                     blurRadius: 20,
                     offset: const Offset(0, 10),
                   ),
@@ -227,7 +227,7 @@ class _TimeTableViewState extends State<TimeTableView> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primary.withOpacity(0.15),
+            color: AppColors.primary.withValues(alpha: 0.15),
             blurRadius: 30,
             offset: const Offset(0, 15),
             spreadRadius: 0,
@@ -337,7 +337,7 @@ class _TimeTableViewState extends State<TimeTableView> {
                     gradient: LinearGradient(
                       colors: [
                         AppColors.primary,
-                        AppColors.primary.withOpacity(0.8),
+                        AppColors.primary.withValues(alpha: 0.8),
                       ],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
@@ -345,7 +345,7 @@ class _TimeTableViewState extends State<TimeTableView> {
                     borderRadius: BorderRadius.circular(16),
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.primary.withOpacity(0.3),
+                        color: AppColors.primary.withValues(alpha: 0.3),
                         blurRadius: 15,
                         offset: const Offset(0, 8),
                       ),
@@ -356,7 +356,7 @@ class _TimeTableViewState extends State<TimeTableView> {
                       Container(
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.2),
+                          color: Colors.white.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: const Icon(
@@ -386,7 +386,7 @@ class _TimeTableViewState extends State<TimeTableView> {
                                 'Academic Year: ${timetable.academicYear}',
                                 style: TextStyle(
                                   fontSize: 14,
-                                  color: Colors.white.withOpacity(0.9),
+                                  color: Colors.white.withValues(alpha: 0.9),
                                 ),
                               ),
                             ],
@@ -408,7 +408,7 @@ class _TimeTableViewState extends State<TimeTableView> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
-                    color: AppColors.primary.withOpacity(0.2),
+                    color: AppColors.primary.withValues(alpha: 0.2),
                     width: 1,
                   ),
                 ),
@@ -443,8 +443,8 @@ class _TimeTableViewState extends State<TimeTableView> {
           _transformationController.value = Matrix4.identity();
         },
         backgroundColor: AppColors.primary,
-        child: const Icon(Icons.fit_screen_rounded, color: Colors.white),
         tooltip: 'Reset zoom',
+        child: const Icon(Icons.fit_screen_rounded, color: Colors.white),
       ),
     );
   }

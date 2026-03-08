@@ -28,18 +28,16 @@ class _CalendarState extends State<Calendar> {
       ),
       body: Column(
         children: [
-          Container(
-            child: TableCalendar(
-              locale: "en_US",
-              rowHeight: 43,
-              headerStyle: const HeaderStyle(
-                  formatButtonVisible: false, titleCentered: true),
-              focusedDay: today,
-              selectedDayPredicate: (day) => isSameDay(day, today),
-              firstDay: DateTime.utc(1999, 1, 1),
-              lastDay: DateTime.utc(2050, 1, 1),
-              onDaySelected: _ondayselected,
-            ),
+          TableCalendar(
+            locale: "en_US",
+            rowHeight: 43,
+            headerStyle: const HeaderStyle(
+                formatButtonVisible: false, titleCentered: true),
+            focusedDay: today,
+            selectedDayPredicate: (day) => isSameDay(day, today),
+            firstDay: DateTime.utc(1999, 1, 1),
+            lastDay: DateTime.utc(2050, 1, 1),
+            onDaySelected: _ondayselected,
           )
         ],
       ),

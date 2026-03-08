@@ -43,10 +43,7 @@ class _NewsViewState extends State<NewsView> {
       flexibleSpace: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [
-              AppColors.primary,
-              AppColors.primary.withOpacity(0.8),
-            ],
+            colors: [AppColors.primary, AppColors.primary.withValues(alpha: 0.8)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -59,10 +56,7 @@ class _NewsViewState extends State<NewsView> {
           height: 1,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [
-                Colors.white.withOpacity(0.3),
-                Colors.transparent,
-              ],
+              colors: [Colors.white.withValues(alpha: 0.3), Colors.transparent],
             ),
           ),
         ),
@@ -118,7 +112,7 @@ class _NewsViewState extends State<NewsView> {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.1),
+                    color: Colors.grey.withValues(alpha: 0.1),
                     blurRadius: 20,
                     offset: const Offset(0, 10),
                   ),
@@ -165,7 +159,7 @@ class _NewsViewState extends State<NewsView> {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.1),
+                    color: Colors.grey.withValues(alpha: 0.1),
                     blurRadius: 20,
                     offset: const Offset(0, 10),
                   ),
@@ -226,7 +220,7 @@ class _NewsViewState extends State<NewsView> {
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primary.withOpacity(0.15),
+            color: AppColors.primary.withValues(alpha: 0.15),
             blurRadius: 30,
             offset: const Offset(0, 15),
             spreadRadius: 0,
@@ -244,7 +238,7 @@ class _NewsViewState extends State<NewsView> {
                   gradient: LinearGradient(
                     colors: [
                       AppColors.primary,
-                      AppColors.primary.withOpacity(0.7),
+                      AppColors.primary.withValues(alpha: 0.7),
                     ],
                   ),
                   borderRadius: BorderRadius.circular(12),
@@ -279,9 +273,7 @@ class _NewsViewState extends State<NewsView> {
             },
             startingDayOfWeek: StartingDayOfWeek.monday,
             availableGestures: AvailableGestures.horizontalSwipe,
-            availableCalendarFormats: const {
-              CalendarFormat.month: 'Month',
-            },
+            availableCalendarFormats: const {CalendarFormat.month: 'Month'},
             headerStyle: HeaderStyle(
               titleTextStyle: const TextStyle(
                 fontSize: 18,
@@ -300,14 +292,14 @@ class _NewsViewState extends State<NewsView> {
             ),
             calendarStyle: CalendarStyle(
               todayDecoration: BoxDecoration(
-                color: AppColors.primary.withOpacity(0.3),
+                color: AppColors.primary.withValues(alpha: 0.3),
                 shape: BoxShape.circle,
               ),
               selectedDecoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
                     AppColors.primary,
-                    AppColors.primary.withOpacity(0.8),
+                    AppColors.primary.withValues(alpha: 0.8),
                   ],
                 ),
                 shape: BoxShape.circle,
@@ -320,9 +312,7 @@ class _NewsViewState extends State<NewsView> {
                 color: AppColors.primary,
                 fontWeight: FontWeight.bold,
               ),
-              weekendTextStyle: TextStyle(
-                color: Colors.grey[600],
-              ),
+              weekendTextStyle: TextStyle(color: Colors.grey[600]),
               outsideDaysVisible: false,
             ),
             onDaySelected: (selectedDay, focusedDay) {
@@ -384,7 +374,7 @@ class _NewsViewState extends State<NewsView> {
                         gradient: LinearGradient(
                           colors: [
                             AppColors.primary,
-                            AppColors.primary.withOpacity(0.6),
+                            AppColors.primary.withValues(alpha: 0.6),
                           ],
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
@@ -415,7 +405,7 @@ class _NewsViewState extends State<NewsView> {
                   category: news.category,
                   isImportant: news.isImportant,
                 );
-              }).toList(),
+              }),
 
               const SizedBox(height: 20),
             ],

@@ -42,7 +42,7 @@ class _ActivityViewState extends State<ActivityView> {
       flexibleSpace: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [AppColors.primary, AppColors.primary.withOpacity(0.8)],
+            colors: [AppColors.primary, AppColors.primary.withValues(alpha: 0.8)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -55,7 +55,7 @@ class _ActivityViewState extends State<ActivityView> {
           height: 1,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.white.withOpacity(0.3), Colors.transparent],
+              colors: [Colors.white.withValues(alpha: 0.3), Colors.transparent],
             ),
           ),
         ),
@@ -96,7 +96,7 @@ class _ActivityViewState extends State<ActivityView> {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.1),
+                    color: Colors.grey.withValues(alpha: 0.1),
                     blurRadius: 20,
                     offset: const Offset(0, 10),
                   ),
@@ -143,7 +143,7 @@ class _ActivityViewState extends State<ActivityView> {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.1),
+                    color: Colors.grey.withValues(alpha: 0.1),
                     blurRadius: 20,
                     offset: const Offset(0, 10),
                   ),
@@ -286,7 +286,7 @@ class ActivityCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: categoryColor.withOpacity(0.15),
+            color: categoryColor.withValues(alpha: 0.15),
             blurRadius: 15,
             offset: const Offset(0, 5),
             spreadRadius: 0,
@@ -316,7 +316,7 @@ class ActivityCard extends StatelessWidget {
                         gradient: LinearGradient(
                           colors: [
                             categoryColor,
-                            categoryColor.withOpacity(0.7),
+                            categoryColor.withValues(alpha: 0.7),
                           ],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
@@ -324,7 +324,7 @@ class ActivityCard extends StatelessWidget {
                         borderRadius: BorderRadius.circular(16),
                         boxShadow: [
                           BoxShadow(
-                            color: categoryColor.withOpacity(0.3),
+                            color: categoryColor.withValues(alpha: 0.3),
                             blurRadius: 8,
                             offset: const Offset(0, 4),
                           ),
@@ -341,7 +341,7 @@ class ActivityCard extends StatelessWidget {
                           vertical: 6,
                         ),
                         decoration: BoxDecoration(
-                          color: categoryColor.withOpacity(0.1),
+                          color: categoryColor.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Text(
@@ -386,15 +386,15 @@ class ActivityCard extends StatelessWidget {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        categoryColor.withOpacity(0.1),
-                        categoryColor.withOpacity(0.05),
+                        categoryColor.withValues(alpha: 0.1),
+                        categoryColor.withValues(alpha:0.05),
                       ],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
-                      color: categoryColor.withOpacity(0.2),
+                      color: categoryColor.withValues(alpha: 0.2),
                       width: 1,
                     ),
                   ),

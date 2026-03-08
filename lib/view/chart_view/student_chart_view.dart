@@ -36,7 +36,7 @@ class _StudentMarksChartViewState extends State<StudentMarksChartView> {
       flexibleSpace: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [AppColors.primary, AppColors.primary.withOpacity(0.8)],
+            colors: [AppColors.primary, AppColors.primary.withValues(alpha: 0.8)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -49,7 +49,7 @@ class _StudentMarksChartViewState extends State<StudentMarksChartView> {
           height: 1,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.white.withOpacity(0.3), Colors.transparent],
+              colors: [Colors.white.withValues(alpha: 0.3), Colors.transparent],
             ),
           ),
         ),
@@ -81,7 +81,7 @@ class _StudentMarksChartViewState extends State<StudentMarksChartView> {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.1),
+                    color: Colors.grey.withValues(alpha: 0.1),
                     blurRadius: 20,
                     offset: const Offset(0, 10),
                   ),
@@ -128,7 +128,7 @@ class _StudentMarksChartViewState extends State<StudentMarksChartView> {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.1),
+                    color: Colors.grey.withValues(alpha: 0.1),
                     blurRadius: 20,
                     offset: const Offset(0, 10),
                   ),
@@ -215,7 +215,7 @@ class _StudentMarksChartViewState extends State<StudentMarksChartView> {
                   borderRadius: BorderRadius.circular(24),
                   boxShadow: [
                     BoxShadow(
-                      color: AppColors.primary.withOpacity(0.15),
+                      color: AppColors.primary.withValues(alpha: 0.15),
                       blurRadius: 30,
                       offset: const Offset(0, 15),
                       spreadRadius: 0,
@@ -234,7 +234,7 @@ class _StudentMarksChartViewState extends State<StudentMarksChartView> {
                             gradient: LinearGradient(
                               colors: [
                                 AppColors.primary,
-                                AppColors.primary.withOpacity(0.7),
+                                AppColors.primary.withValues(alpha: 0.7),
                               ],
                             ),
                             borderRadius: BorderRadius.circular(12),
@@ -406,12 +406,12 @@ class _StudentMarksChartViewState extends State<StudentMarksChartView> {
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [color.withOpacity(0.15), color.withOpacity(0.08)],
+          colors: [color.withValues(alpha: 0.15), color.withValues(alpha: 0.08)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: color.withOpacity(0.2), width: 1),
+        border: Border.all(color: color.withValues(alpha: 0.2), width: 1),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -419,7 +419,7 @@ class _StudentMarksChartViewState extends State<StudentMarksChartView> {
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: color.withOpacity(0.2),
+              color: color.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Icon(icon, color: color, size: 22),

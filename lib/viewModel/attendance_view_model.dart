@@ -1,13 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'dart:math';
 
-class AttendanceViewModel extends ChangeNotifier {
+class AttendanceViewModelOriginal extends ChangeNotifier {
   bool isLoading = false;
   int attendanceCount = 0;
   double attendancePercentage = 0.0;
   Map<DateTime, bool> markedDates = {};
 
-  AttendanceViewModel() {
+  AttendanceViewModelOriginal() {
     loadLocalAttendance();
   }
 
@@ -45,10 +45,5 @@ class AttendanceViewModel extends ChangeNotifier {
       isLoading = false;
       notifyListeners();
     }
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
   }
 }
